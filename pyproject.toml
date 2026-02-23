@@ -39,6 +39,9 @@ show_missing = true
 skip_covered = true
 skip_empty = true
 
+[tool.autopub]
+plugins = ["uv", "github"]
+
 [tool.ty.environment]
 extra-paths = [
     "src",
