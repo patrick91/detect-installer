@@ -10,7 +10,7 @@ import pytest
 from .utils import has, run_cli
 
 pytestmark = pytest.mark.skipif(
-    sys.platform == "win32" and not has("conda"),
+    not has("conda"),
     reason="conda not installed",
 )
 
