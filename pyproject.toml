@@ -1,6 +1,6 @@
 [project]
 name = "detect-installer"
-version = "0.2.0"
+version = "0.2.1"
 description = "Detect how a Python package was installed and get the correct upgrade command"
 readme = "README.md"
 authors = [
