@@ -12,10 +12,13 @@ jobs:
   check-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # allow-unsafe-pr-checkout is required so AutoPub can check fork PRs; the
+      # sparse checkout below limits the PR working tree to metadata parsed as data.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: "refs/pull/${{ github.event.number }}/merge"
-          # Only checkout the files needed for the check - faster and more secure
+          allow-unsafe-pr-checkout: true
+          persist-credentials: false
           sparse-checkout: |
             RELEASE.md
             pyproject.toml
