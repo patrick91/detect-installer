@@ -29,8 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
 
       - uses: autopub/autopub-action@v1.1.1
         with:
@@ -46,4 +44,3 @@ jobs:
         with:
           command: publish
           autopub-version: "1.0.0a63"
-          github-token: ${{ secrets.PAT_TOKEN }}
